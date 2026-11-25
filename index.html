@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,97 +7,287 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
- margin:0;background:#f2f5f9;color:#263849;
+ margin:0;
+ background:#f2f5f9;
+ color:#263849;
  font-family:Arial,"Noto Sans JP",sans-serif;
 }
+
 header{
  background:linear-gradient(135deg,#102e43,#267d94);
- color:white;padding:28px 22px;
+ color:white;
+ padding:28px 22px;
 }
+
 header h1{margin:0;font-size:29px}
 header p{color:#dcebf1;margin-bottom:0}
-main{max-width:1050px;margin:auto;padding:20px}
-button{
- border:0;border-radius:10px;padding:11px 15px;
- cursor:pointer;font-size:14px;
+
+main{
+ max-width:1050px;
+ margin:auto;
+ padding:20px;
 }
+
+button{
+ border:0;
+ border-radius:10px;
+ padding:11px 15px;
+ cursor:pointer;
+ font-size:14px;
+}
+
 input,textarea{
- width:100%;padding:13px;border:1px solid #dce3e9;
- border-radius:10px;font-size:15px;margin:8px 0;
+ width:100%;
+ padding:13px;
+ border:1px solid #dce3e9;
+ border-radius:10px;
+ font-size:15px;
+ margin:8px 0;
  font-family:inherit;
 }
+
 textarea{min-height:100px;resize:vertical}
+
 .filters,.tabs{
- display:flex;flex-wrap:wrap;gap:8px;margin:15px 0;
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin:15px 0;
 }
-.filters button,.tabs button{background:white;color:#345}
+
+.filters button,.tabs button{
+ background:white;
+ color:#345;
+}
+
 .filters button.active,.tabs button.active{
- background:#205b78;color:white;
+ background:#205b78;
+ color:white;
 }
+
 .grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
  gap:14px;
 }
+
 .card{
- background:white;border:1px solid #e6ebef;
- border-radius:15px;padding:17px;cursor:pointer;
+ background:white;
+ border:1px solid #e6ebef;
+ border-radius:15px;
+ padding:17px;
+ cursor:pointer;
  transition:.2s;
 }
+
 .card:hover{transform:translateY(-3px)}
+
 .emoji{font-size:36px;margin-bottom:8px}
 .tag{font-size:12px;color:#25809a;font-weight:bold}
 .card h3{margin:8px 0}
 .card p{font-size:13px;color:#68798a;line-height:1.7}
+
 .detail{
- background:white;padding:21px;border-radius:16px;
+ background:white;
+ padding:21px;
+ border-radius:16px;
  box-shadow:0 3px 15px #00000009;
 }
+
 .hidden{display:none!important}
+
 .back{background:#e9eff3;color:#345}
 .primary{background:#205b78;color:white}
 .danger{background:#fff0ed;color:#bd4c3b}
+
 .info{
- background:#f2f6f9;padding:15px;border-radius:12px;
- margin:14px 0;line-height:1.9;
+ background:#f2f6f9;
+ padding:15px;
+ border-radius:12px;
+ margin:14px 0;
+ line-height:1.9;
 }
+
 .warning{
- background:#fff4df;padding:15px;border-radius:12px;
- line-height:1.9;margin:14px 0;
+ background:#fff4df;
+ padding:15px;
+ border-radius:12px;
+ line-height:1.9;
+ margin:14px 0;
 }
+
 .progress{
- height:8px;background:#e4eaf0;border-radius:8px;
+ height:8px;
+ background:#e4eaf0;
+ border-radius:8px;
  overflow:hidden;
 }
-.bar{height:100%;background:#2694a8;width:0%}
+
+.bar{
+ height:100%;
+ background:#2694a8;
+ width:0%;
+}
+
 .step{
- background:#edf6f8;padding:20px;border-radius:12px;
- min-height:110px;line-height:1.9;margin:14px 0;
+ background:#edf6f8;
+ padding:20px;
+ border-radius:12px;
+ min-height:110px;
+ line-height:1.9;
+ margin:14px 0;
 }
-.actions{display:flex;gap:10px}
+
+.actions{
+ display:flex;
+ gap:10px;
+}
+
 .actions button{flex:1}
+
 .quiz button{
- display:block;width:100%;text-align:left;
- background:#edf3f7;margin:8px 0;
+ display:block;
+ width:100%;
+ text-align:left;
+ background:#edf3f7;
+ margin:8px 0;
 }
+
 .quiz button:hover{background:#dcebf2}
-.quiz button.selected{background:#dcebf2;border:2px solid #205b78}
+
 #feedback{font-weight:bold}
+
 .illustration{
  background:linear-gradient(135deg,#e5f2f5,#f4f8fa);
- border-radius:15px;padding:25px;text-align:center;
+ border-radius:15px;
+ padding:25px;
+ text-align:center;
  margin:16px 0;
 }
+
 .illustration .big{font-size:75px}
 .illustration p{font-size:13px;color:#557}
+
 .record{
- background:#f4f7fa;padding:15px;border-radius:12px;
- margin:12px 0;line-height:1.8;
+ background:#f4f7fa;
+ padding:15px;
+ border-radius:12px;
+ margin:12px 0;
+ line-height:1.8;
 }
+
 .record button{margin:5px 4px 0 0}
+
 .small{font-size:12px;color:#82909d}
-footer{text-align:center;color:#82909d;padding:30px}
+
+footer{
+ text-align:center;
+ color:#82909d;
+ padding:30px;
+}
+
+/* シミュレーションゲーム */
+
+.simulation{
+ display:none;
+ background:linear-gradient(135deg,#eaf5f8,#f7fbfd);
+ border:1px solid #d7e8ee;
+ border-radius:16px;
+ padding:18px;
+ margin:18px 0;
+}
+
+.simulation.active{display:block}
+
+.sim-label{
+ font-size:12px;
+ font-weight:bold;
+ color:#267d94;
+}
+
+.sim-scene{
+ background:white;
+ border:1px solid #e3edf1;
+ border-radius:14px;
+ padding:18px;
+ text-align:center;
+ margin:14px 0;
+}
+
+.sim-vessel{
+ width:76px;
+ height:88px;
+ margin:8px auto 12px;
+ border:4px solid #8ba9b5;
+ border-top:0;
+ border-radius:5px 5px 18px 18px;
+ background:linear-gradient(
+  to bottom,
+  transparent 0 30%,
+  var(--liquid,#9bd5df) 30% 100%
+ );
+ transition:background .5s;
+}
+
+.sim-scene p{
+ font-size:13px;
+ color:#607687;
+ line-height:1.7;
+}
+
+.sim-question{
+ background:white;
+ border-radius:12px;
+ padding:14px;
+ line-height:1.8;
+ margin:12px 0;
+}
+
+.sim-options{
+ display:grid;
+ gap:8px;
+}
+
+.sim-options button{
+ width:100%;
+ text-align:left;
+ background:white;
+ color:#263849;
+ border:1px solid #d5e3e9;
+ padding:13px;
+}
+
+.sim-options button:hover{
+ background:#e4f1f5;
+ border-color:#8db9c6;
+}
+
+.sim-feedback{
+ margin-top:12px;
+ padding:13px;
+ border-radius:10px;
+ line-height:1.7;
+}
+
+.sim-feedback.good{
+ background:#e4f5e9;
+ color:#17683b;
+}
+
+.sim-feedback.try{
+ background:#fff2e6;
+ color:#9a5a19;
+}
+
+@media(max-width:600px){
+ main{padding:13px}
+ .detail{padding:15px}
+ .simulation{padding:14px}
+ .sim-scene{padding:14px}
+ header h1{font-size:25px}
+}
 </style>
 </head>
 
@@ -112,12 +301,19 @@ footer{text-align:center;color:#82909d;padding:30px}
 <main>
 
 <div class="tabs">
-<button class="active" onclick="showTab('home',this)">🔬 実験一覧</button>
-<button onclick="showTab('records',this)">📝 実験記録</button>
+<button class="active" onclick="showTab('home',this)">
+🔬 実験一覧
+</button>
+
+<button onclick="showTab('records',this)">
+📝 実験記録
+</button>
 </div>
 
 <section id="home">
+
 <h2>実験を探す</h2>
+
 <p>気になる実験を選んで、原理や手順を確認しよう。</p>
 
 <input id="search" placeholder="🔍 実験名・キーワードで検索">
@@ -132,15 +328,21 @@ footer{text-align:center;color:#82909d;padding:30px}
 </div>
 
 <p id="total"></p>
+
 <div id="cards" class="grid"></div>
+
 </section>
 
 <section id="page" class="hidden">
+
 <button class="back" onclick="goHome()">← 一覧に戻る</button>
 
 <div class="detail">
+
 <div id="category" class="tag"></div>
+
 <h2 id="title"></h2>
+
 <p id="purpose"></p>
 
 <div class="illustration">
@@ -160,9 +362,50 @@ footer{text-align:center;color:#82909d;padding:30px}
 </div>
 
 <h3>実験手順・学習の流れ</h3>
-<div class="progress"><div id="bar" class="bar"></div></div>
+
+<div class="progress">
+<div id="bar" class="bar"></div>
+</div>
+
 <p id="counter"></p>
+
 <div id="step" class="step"></div>
+
+<!-- ゲーム部分 -->
+
+<div id="simulation" class="simulation">
+
+<div class="sim-label">🎮 STEP CHALLENGE</div>
+
+<h3>実験シミュレーション</h3>
+
+<p class="small">
+実験の変化を予想してミッションに挑戦しよう。
+正解すると次の手順に進めるよ。
+</p>
+
+<div class="sim-scene">
+
+<div class="sim-vessel" id="simVessel"></div>
+
+<strong id="simTitle">バーチャル実験室</strong>
+
+<p id="simDescription">
+実験の変化を予想しよう。
+</p>
+
+</div>
+
+<div class="sim-question">
+<strong>🎯 ミッション</strong>
+<p id="simQuestion"></p>
+</div>
+
+<div class="sim-options" id="simOptions"></div>
+
+<div id="simFeedback" aria-live="polite"></div>
+
+</div>
 
 <div class="actions">
 <button class="back" onclick="move(-1)">← 前へ</button>
@@ -187,13 +430,18 @@ footer{text-align:center;color:#82909d;padding:30px}
 <hr>
 
 <h3>📝 確認問題</h3>
+
 <div id="quiz" class="quiz"></div>
+
 <p id="feedback"></p>
 
 <hr>
 
 <h3>📓 実験記録</h3>
-<p class="small">実験の結果や考察を入力して保存できます。</p>
+
+<p class="small">
+実験の結果や考察を入力して保存できます。
+</p>
 
 <label>実験結果</label>
 <textarea id="resultInput" placeholder="観察した結果を入力..."></textarea>
@@ -201,82 +449,110 @@ footer{text-align:center;color:#82909d;padding:30px}
 <label>考察・感想</label>
 <textarea id="thoughtInput" placeholder="実験から分かったことを入力..."></textarea>
 
-<button class="primary" onclick="saveRecord()">記録を保存する</button>
+<button class="primary" onclick="saveRecord()">
+記録を保存する
+</button>
+
 <p id="saveMessage"></p>
+
 </div>
 </section>
 
 <section id="records" class="hidden">
+
 <h2>📝 保存した実験記録</h2>
-<p class="small">保存した結果と考察を確認できます。</p>
+
+<p class="small">
+保存した結果と考察を確認できます。
+</p>
+
 <div id="recordList"></div>
+
 </section>
 
 </main>
 
 <footer>
-LabNavi Chemistry 4.0<br>
+LabNavi Chemistry<br>
 高校化学学習サポートアプリ
 </footer>
 
 <script>
 
+/* =========================
+   実験データ
+========================= */
+
 const experiments=[
 
 {
-name:"酸・塩基の性質",cat:"化学基礎",emoji:"🧪",
+name:"酸・塩基の性質",
+cat:"化学基礎",
+emoji:"🧪",
 purpose:"指示薬を使って酸性・中性・塩基性の違いを調べる。",
 principle:"水溶液中の水素イオン濃度によってpHが変化する。指示薬はpHによって色が変わる。",
 materials:"pH試験紙、色見本、安全な観察用試料、容器。",
-steps:["酸性・中性・塩基性の意味を確認する。","指示薬の色の変化とpHの関係を確認する。","教師が用意した試料を別々の容器に準備する。","試料の性質を指示薬で調べる。","色の変化を記録して分類する。"],
+steps:["酸性・中性・塩基性の意味を確認する。","指示薬の色の変化とpHの関係を確認する。","教師が用意した試料を確認する。","試料の性質を指示薬で調べる。","色の変化を記録して分類する。"],
 result:"酸性はpH 7未満、中性はpH 7、塩基性はpH 7より大きい。",
 equation:"酸性：pH < 7\n中性：pH = 7\n塩基性：pH > 7",
 safety:"試料を口に入れない。試料を混ぜない。教師が指定したものだけを使用する。",
 question:"pHが7より小さい水溶液は？",
-choices:["酸性","中性","塩基性"],answer:0
+choices:["酸性","中性","塩基性"],
+answer:0
 },
 
 {
-name:"中和反応",cat:"化学基礎",emoji:"⚗️",
+name:"中和反応",
+cat:"化学基礎",
+emoji:"⚗️",
 purpose:"酸と塩基が反応する仕組みを学ぶ。",
 principle:"酸から生じるH⁺と塩基から生じるOH⁻が反応して水になる。",
 materials:"希薄な酸・塩基の水溶液、指示薬、反応の模式図。",
-steps:["酸と塩基の性質を確認する。","中和の意味を学ぶ。","反応前後の水溶液の性質を資料で確認する。","指示薬の色の変化を確認する。","中和反応のイオン反応式をまとめる。"],
+steps:["酸と塩基の性質を確認する。","中和の意味を学ぶ。","反応前後の水溶液の性質を確認する。","指示薬の色の変化を確認する。","中和反応のイオン反応式をまとめる。"],
 result:"酸と塩基が反応すると、水と塩が生じる。",
-equation:"H⁺ + OH⁻ → H₂O\n例：HCl + NaOH → NaCl + H₂O",
+equation:"H⁺ + OH⁻ → H₂O\nHCl + NaOH → NaCl + H₂O",
 safety:"薬品の混合は教師の管理下で行う。保護眼鏡を使用する。",
 question:"中和反応で生じるものは？",
-choices:["水と塩","酸素と水素","金属と酸素"],answer:0
+choices:["水と塩","酸素と水素","金属と酸素"],
+answer:0
 },
 
 {
-name:"中和滴定",cat:"化学基礎",emoji:"📏",
+name:"中和滴定",
+cat:"化学基礎",
+emoji:"📏",
 purpose:"酸と塩基の濃度を中和反応から求める。",
 principle:"中和点では酸が放出するH⁺と塩基が放出するOH⁻の物質量が等しくなる。",
 materials:"ビュレット、ホールピペット、コニカルビーカー、指示薬。",
 steps:["滴定の目的と器具の役割を確認する。","既知濃度と未知濃度の溶液を確認する。","反応式から物質量の関係を整理する。","教師の指導のもとで滴定を観察する。","終点の色の変化を記録する。","未知濃度を計算する。"],
 result:"反応式の係数を利用して未知の酸または塩基の濃度を求められる。",
-equation:"一価の酸と一価の塩基の場合：CaVa = CbVb\n多価の酸・塩基では反応式の係数を考慮する。",
-safety:"滴定や溶液の調製は教師の指導下で行う。保護眼鏡を着用する。",
+equation:"一価の酸と一価の塩基：CaVa = CbVb",
+safety:"滴定や溶液の調製は教師の指導下で行う。",
 question:"中和滴定で利用する基本的な関係は？",
-choices:["物質量の関係","密度だけ","沸点の関係"],answer:0
+choices:["物質量の関係","密度だけ","沸点の関係"],
+answer:0
 },
 
 {
-name:"電解質と非電解質",cat:"化学基礎",emoji:"⚡",
+name:"電解質と非電解質",
+cat:"化学基礎",
+emoji:"⚡",
 purpose:"水溶液が電気を通す仕組みを学ぶ。",
 principle:"電解質は水に溶けると陽イオンと陰イオンに分かれ、イオンが移動することで電流が流れる。",
 materials:"電解質・非電解質の資料、低電圧の教育用教材。",
 steps:["電解質と非電解質の違いを確認する。","代表的な物質を分類する。","水溶液中での電離の様子を確認する。","電気伝導性を比較する。","イオンの移動と電流の関係をまとめる。"],
 result:"食塩などの電解質は水溶液中でイオンになり、電気を通す。",
-equation:"NaCl → Na⁺ + Cl⁻\n砂糖は水に溶けても基本的にイオンにならない。",
+equation:"NaCl → Na⁺ + Cl⁻",
 safety:"電気伝導性の実験は教師指定の低電圧教材を使用する。",
 question:"水に溶けてイオンになる物質は？",
-choices:["電解質","非電解質","油"],answer:0
+choices:["電解質","非電解質","油"],
+answer:0
 },
 
 {
-name:"金属のイオン化傾向",cat:"化学基礎",emoji:"🔩",
+name:"金属のイオン化傾向",
+cat:"化学基礎",
+emoji:"🔩",
 purpose:"金属によって電子を失いやすさが異なることを学ぶ。",
 principle:"金属原子が電子を失って陽イオンになる性質をイオン化傾向という。",
 materials:"イオン化傾向の資料、反応観察映像。",
@@ -285,24 +561,30 @@ result:"金属によって陽イオンになりやすさが異なる。",
 equation:"K > Ca > Na > Mg > Al > Zn > Fe > Ni > Sn > Pb > H > Cu > Hg > Ag > Pt > Au",
 safety:"金属と水や酸の反応は資料または教師の実演で確認する。",
 question:"銅よりイオン化傾向が小さい金属は？",
-choices:["亜鉛","銀","マグネシウム"],answer:1
+choices:["亜鉛","銀","マグネシウム"],
+answer:1
 },
 
 {
-name:"酸化還元反応",cat:"化学基礎",emoji:"🔄",
+name:"酸化還元反応",
+cat:"化学基礎",
+emoji:"🔄",
 purpose:"電子の移動による酸化と還元を理解する。",
-principle:"電子を失う反応を酸化、電子を受け取る反応を還元という。両者は同時に起こる。",
+principle:"電子を失う反応を酸化、電子を受け取る反応を還元という。",
 materials:"酸化還元反応の映像、反応式資料。",
 steps:["酸化と還元の定義を確認する。","反応前後の酸化数を調べる。","電子の移動を整理する。","酸化剤と還元剤を判定する。","反応全体で電子の数が一致することを確認する。"],
 result:"酸化と還元は同時に起こり、電子の受け渡しがある。",
 equation:"酸化：電子を失う。\n還元：電子を受け取る。",
 safety:"酸化剤や還元剤を用いる実験は教師の管理下で行う。",
 question:"電子を受け取る反応は？",
-choices:["酸化","還元","中和"],answer:1
+choices:["酸化","還元","中和"],
+answer:1
 },
 
 {
-name:"反応熱",cat:"理論化学",emoji:"🌡️",
+name:"反応熱",
+cat:"理論化学",
+emoji:"🌡️",
 purpose:"化学反応に伴う熱の出入りを学ぶ。",
 principle:"反応物と生成物のエネルギーの差によって熱の出入りが生じる。",
 materials:"温度変化の記録資料、反応熱のグラフ。",
@@ -311,50 +593,62 @@ result:"発熱反応では周囲に熱を放出し、吸熱反応では周囲か
 equation:"発熱反応：ΔH < 0\n吸熱反応：ΔH > 0",
 safety:"実際の反応実験は教師の管理下で行う。",
 question:"周囲に熱を放出する反応は？",
-choices:["吸熱反応","発熱反応","中和のみ"],answer:1
+choices:["吸熱反応","発熱反応","中和のみ"],
+answer:1
 },
 
 {
-name:"化学平衡",cat:"理論化学",emoji:"⚖️",
+name:"化学平衡",
+cat:"理論化学",
+emoji:"⚖️",
 purpose:"正反応と逆反応の速度が等しくなる状態を学ぶ。",
-principle:"可逆反応では、正反応と逆反応の速度が等しくなると化学平衡に達する。",
+principle:"可逆反応では正反応と逆反応の速度が等しくなると化学平衡に達する。",
 materials:"化学平衡の模式図、濃度変化のグラフ。",
 steps:["可逆反応の意味を確認する。","正反応と逆反応を比較する。","平衡状態のグラフを確認する。","濃度が一定になる理由を考える。","ルシャトリエの原理を整理する。"],
 result:"平衡状態では正反応と逆反応の速度が等しい。濃度は一定になるが反応自体は続いている。",
 equation:"N₂ + 3H₂ ⇄ 2NH₃",
 safety:"高圧反応は実施せず、資料で学習する。",
 question:"化学平衡で等しくなるものは？",
-choices:["濃度","反応速度","物質量"],answer:1
+choices:["濃度","反応速度","物質量"],
+answer:1
 },
 
 {
-name:"反応速度",cat:"理論化学",emoji:"⏱️",
+name:"反応速度",
+cat:"理論化学",
+emoji:"⏱️",
 purpose:"温度や濃度が反応速度に与える影響を学ぶ。",
 principle:"反応速度は単位時間あたりの濃度変化で表される。",
 materials:"反応速度の実験映像、時間と濃度のグラフ。",
 steps:["反応速度の意味を確認する。","時間と濃度の関係を確認する。","条件ごとのグラフを比較する。","温度や濃度による変化を整理する。","触媒の働きを確認する。"],
-result:"一般に温度や濃度を上げると反応速度は大きくなる。触媒も反応速度に影響する。",
+result:"一般に温度や濃度を上げると反応速度は大きくなる。",
 equation:"反応速度 = 単位時間あたりの濃度変化",
 safety:"反応観察は教師が選んだ安全な教材を用いる。",
 question:"一般に温度を上げると反応速度は？",
-choices:["速くなる","遅くなる","ゼロになる"],answer:0
+choices:["速くなる","遅くなる","ゼロになる"],
+answer:0
 },
 
 {
-name:"溶解度と再結晶",cat:"理論化学",emoji:"💎",
+name:"溶解度と再結晶",
+cat:"理論化学",
+emoji:"💎",
 purpose:"温度と溶解度の関係を理解する。",
 principle:"溶解度は一定量の溶媒に溶ける溶質の最大量であり、温度によって変化する。",
 materials:"溶解度曲線、結晶の写真、観察資料。",
 steps:["溶解度の意味を確認する。","溶解度曲線を確認する。","温度による溶解度の変化を読み取る。","冷却によって結晶ができる仕組みを確認する。","再結晶による物質の精製をまとめる。"],
 result:"温度による溶解度の変化を利用すると、結晶を取り出して物質を精製できる。",
-equation:"析出する結晶の量は、温度による溶解度の差に関係する。",
+equation:"析出する結晶の量は温度による溶解度の差に関係する。",
 safety:"加熱・冷却操作は教師の指導のもとで行う。",
 question:"多くの固体物質は温度が上がると溶解度が？",
-choices:["大きくなる","小さくなる","ゼロになる"],answer:0
+choices:["大きくなる","小さくなる","ゼロになる"],
+answer:0
 },
 
 {
-name:"コロイド",cat:"理論化学",emoji:"💧",
+name:"コロイド",
+cat:"理論化学",
+emoji:"💧",
 purpose:"コロイド粒子の性質を理解する。",
 principle:"コロイドは通常の溶液中の分子やイオンより大きな粒子が分散した状態である。",
 materials:"コロイドの観察写真、チンダル現象の映像。",
@@ -363,24 +657,30 @@ result:"コロイドにはチンダル現象やブラウン運動などの特徴
 equation:"コロイド粒子は通常の溶液中の分子やイオンより大きい。",
 safety:"光源を直接目に向けない。観察教材を使用する。",
 question:"光の通路が見える現象は？",
-choices:["チンダル現象","炎色反応","中和反応"],answer:0
+choices:["チンダル現象","炎色反応","中和反応"],
+answer:0
 },
 
 {
-name:"気体の発生と性質",cat:"無機化学",emoji:"🫧",
+name:"気体の発生と性質",
+cat:"無機化学",
+emoji:"🫧",
 purpose:"代表的な気体の性質と集め方を学ぶ。",
 principle:"気体は水への溶けやすさや空気との密度の違いによって捕集法が異なる。",
 materials:"気体の発生・捕集の模式図、性質の資料。",
 steps:["酸素・水素・二酸化炭素などの性質を確認する。","気体の水への溶けやすさを比較する。","水上置換法・上方置換法・下方置換法の違いを確認する。","気体ごとに適切な捕集法を資料から選ぶ。","気体の確認方法を整理する。"],
 result:"水に溶けにくい気体は水上置換法、空気との密度の違いを利用できる気体は上方・下方置換法で集める。",
 equation:"酸素：助燃性\n水素：可燃性\n二酸化炭素：石灰水を白くにごらせる。",
-safety:"気体の発生・捕集は教師の管理下で行う。水素などの燃焼実験は映像や資料で学ぶ。",
+safety:"気体の発生・捕集は教師の管理下で行う。",
 question:"二酸化炭素の確認に使われる液体は？",
-choices:["石灰水","食塩水","エタノール"],answer:0
+choices:["石灰水","食塩水","エタノール"],
+answer:0
 },
 
 {
-name:"アンモニアの性質",cat:"無機化学",emoji:"☁️",
+name:"アンモニアの性質",
+cat:"無機化学",
+emoji:"☁️",
 purpose:"アンモニアの水への溶解と塩基性を学ぶ。",
 principle:"アンモニアは水に溶けやすく、水と反応してOH⁻を生じる。",
 materials:"アンモニアの性質を示す映像、分子構造資料。",
@@ -389,24 +689,30 @@ result:"アンモニアは水に非常によく溶け、水溶液は塩基性を
 equation:"NH₃ + H₂O ⇄ NH₄⁺ + OH⁻",
 safety:"刺激性があるため、実際の発生や吸入は行わず映像で学ぶ。",
 question:"アンモニア水の性質は？",
-choices:["酸性","中性","塩基性"],answer:2
+choices:["酸性","中性","塩基性"],
+answer:2
 },
 
 {
-name:"二酸化炭素の性質",cat:"無機化学",emoji:"🌫️",
+name:"二酸化炭素の性質",
+cat:"無機化学",
+emoji:"🌫️",
 purpose:"二酸化炭素の性質と炭酸の生成を学ぶ。",
 principle:"二酸化炭素は水に一部溶け、炭酸と平衡をつくる。石灰水と反応して炭酸カルシウムを生じる。",
 materials:"二酸化炭素の資料、反応式、石灰水との反応映像。",
 steps:["二酸化炭素の分子構造を確認する。","水への溶解について学ぶ。","炭酸との関係を整理する。","石灰水との反応式を確認する。","二酸化炭素を過剰に通した場合の変化も学ぶ。"],
 result:"二酸化炭素を石灰水に通すと白くにごる。さらに過剰に通すと透明になることがある。",
-equation:"CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O\nCaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂",
+equation:"CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O",
 safety:"気体を発生させる操作は教師の指導下で行う。",
 question:"二酸化炭素を石灰水に通すと最初は？",
-choices:["白くにごる","青くなる","赤くなる"],answer:0
+choices:["白くにごる","青くなる","赤くなる"],
+answer:0
 },
 
 {
-name:"酸素の性質",cat:"無機化学",emoji:"🫧",
+name:"酸素の性質",
+cat:"無機化学",
+emoji:"🫧",
 purpose:"酸素の助燃性と酸化反応について学ぶ。",
 principle:"酸素は自ら燃える気体ではないが、他の物質の燃焼を助ける。",
 materials:"酸素の性質を示す映像、反応式資料。",
@@ -415,24 +721,30 @@ result:"酸素は燃焼を助ける性質を持つ。",
 equation:"2Mg + O₂ → 2MgO",
 safety:"燃焼実験は教師の実演または映像で確認する。",
 question:"酸素の性質として正しいものは？",
-choices:["助燃性がある","必ず燃える","水に非常によく溶ける"],answer:0
+choices:["助燃性がある","必ず燃える","水に非常によく溶ける"],
+answer:0
 },
 
 {
-name:"ハロゲンの性質",cat:"無機化学",emoji:"🧫",
+name:"ハロゲンの性質",
+cat:"無機化学",
+emoji:"🧫",
 purpose:"ハロゲン元素の性質と反応性を学ぶ。",
 principle:"ハロゲンは電子を受け取って陰イオンになりやすい。単体の酸化力は周期表の上にある元素ほど強い。",
 materials:"ハロゲンの性質の資料、反応式。",
 steps:["ハロゲン元素を確認する。","周期表での位置を調べる。","単体の酸化力を比較する。","ハロゲン化物イオンとの関係を整理する。","ハロゲンの性質をまとめる。"],
 result:"ハロゲン単体の酸化力はフッ素が最も強い。",
-equation:"酸化力：F₂ > Cl₂ > Br₂ > I₂",
+equation:"F₂ > Cl₂ > Br₂ > I₂",
 safety:"ハロゲン単体は危険性があるため資料で学ぶ。",
 question:"最も酸化力が強いハロゲンは？",
-choices:["フッ素","塩素","ヨウ素"],answer:0
+choices:["フッ素","塩素","ヨウ素"],
+answer:0
 },
 
 {
-name:"硫酸イオンの確認",cat:"無機化学",emoji:"🧫",
+name:"硫酸イオンの確認",
+cat:"無機化学",
+emoji:"🧫",
 purpose:"硫酸イオンを識別する反応を学ぶ。",
 principle:"硫酸イオンはバリウムイオンと反応し、水に溶けにくい硫酸バリウムの沈殿を生じる。",
 materials:"イオン反応の模式図、反応資料。",
@@ -441,24 +753,30 @@ result:"硫酸イオンはバリウムイオンと反応して白色沈殿を生
 equation:"Ba²⁺ + SO₄²⁻ → BaSO₄↓",
 safety:"バリウム化合物には毒性のあるものがある。実験は教師の管理下で行う。",
 question:"硫酸バリウムの色は？",
-choices:["白色","青色","赤色"],answer:0
+choices:["白色","青色","赤色"],
+answer:0
 },
 
 {
-name:"アルコールの性質",cat:"有機化学",emoji:"🧴",
+name:"アルコールの性質",
+cat:"有機化学",
+emoji:"🧴",
 purpose:"アルコールの官能基と性質を学ぶ。",
 principle:"アルコールは炭化水素の水素原子をヒドロキシ基で置き換えた構造を持つ。",
 materials:"構造式資料、アルコールの性質の映像。",
 steps:["ヒドロキシ基を確認する。","アルコールの構造を調べる。","水への溶解性の違いを比較する。","第一級・第二級・第三級アルコールの違いを学ぶ。","酸化反応について整理する。"],
 result:"第一級アルコールは酸化によってアルデヒドなどに、第二級アルコールはケトンになる。",
-equation:"第一級アルコール → アルデヒド → カルボン酸\n第二級アルコール → ケトン\n第三級アルコールは一般に穏やかな酸化では酸化されにくい。",
+equation:"第一級アルコール → アルデヒド → カルボン酸\n第二級アルコール → ケトン",
 safety:"アルコールには引火性のあるものがある。火気を使う実験は教師の管理下で行う。",
 question:"アルコールの官能基は？",
-choices:["ヒドロキシ基","カルボキシ基","アルデヒド基"],answer:0
+choices:["ヒドロキシ基","カルボキシ基","アルデヒド基"],
+answer:0
 },
 
 {
-name:"カルボン酸の性質",cat:"有機化学",emoji:"🧪",
+name:"カルボン酸の性質",
+cat:"有機化学",
+emoji:"🧪",
 purpose:"カルボキシ基を持つ物質の性質を学ぶ。",
 principle:"カルボン酸はカルボキシ基を持ち、水中で一部が電離してH⁺を生じる。",
 materials:"構造式資料、酢酸などの性質の資料。",
@@ -467,11 +785,14 @@ result:"カルボン酸は酸性を示す有機化合物である。",
 equation:"R-COOH ⇄ R-COO⁻ + H⁺",
 safety:"酸性物質を用いる実験は教師の指導下で行う。",
 question:"カルボン酸の官能基は？",
-choices:["-OH","-COOH","-CHO"],answer:1
+choices:["-OH","-COOH","-CHO"],
+answer:1
 },
 
 {
-name:"エステルの合成",cat:"有機化学",emoji:"🌸",
+name:"エステルの合成",
+cat:"有機化学",
+emoji:"🌸",
 purpose:"カルボン酸とアルコールからエステルができる反応を学ぶ。",
 principle:"カルボン酸とアルコールが反応すると、エステルと水が生じる。この反応は可逆反応である。",
 materials:"構造式資料、反応式、映像教材。",
@@ -480,24 +801,30 @@ result:"カルボン酸とアルコールからエステルと水が生成する
 equation:"R-COOH + R'-OH ⇄ R-COO-R' + H₂O",
 safety:"実際の合成は薬品や加熱を伴うため教師の管理下で行う。",
 question:"エステル化で生じるものは？",
-choices:["水","酸素","アンモニア"],answer:0
+choices:["水","酸素","アンモニア"],
+answer:0
 },
 
 {
-name:"銀鏡反応",cat:"有機化学",emoji:"✨",
+name:"銀鏡反応",
+cat:"有機化学",
+emoji:"✨",
 purpose:"アルデヒド基の還元性について学ぶ。",
 principle:"アルデヒドは還元性を示し、銀イオンを金属銀に還元する。",
 materials:"銀鏡反応の写真・映像教材、反応式資料。",
 steps:["アルデヒド基の構造を確認する。","銀鏡反応の原理を学ぶ。","反応前後の変化を資料で確認する。","アルデヒドとケトンの違いを整理する。","銀鏡反応が示す物質の特徴をまとめる。"],
 result:"アルデヒドは酸化され、銀イオンは金属銀に還元される。",
-equation:"R-CHO + 2[Ag(NH₃)₂]⁺ + 3OH⁻\n→ R-COO⁻ + 2Ag + 4NH₃ + 2H₂O",
-safety:"銀アンモニア錯体を用いる実験は教師の管理下で行う。残留物を放置・乾燥させず、指定の方法で処理する。家庭では実施しない。",
+equation:"アルデヒドが酸化され、銀イオンが銀になる。",
+safety:"銀アンモニア錯体を用いる実験は教師の管理下で行う。家庭では実施しない。",
 question:"銀鏡反応を示す代表的な官能基は？",
-choices:["アルデヒド基","エーテル結合","二重結合"],answer:0
+choices:["アルデヒド基","エーテル結合","二重結合"],
+answer:0
 },
 
 {
-name:"フェノールの性質",cat:"有機化学",emoji:"🌺",
+name:"フェノールの性質",
+cat:"有機化学",
+emoji:"🌺",
 purpose:"フェノールの構造と弱酸性を学ぶ。",
 principle:"フェノールはベンゼン環に直接ヒドロキシ基が結合した構造を持ち、弱酸性を示す。",
 materials:"構造式資料、反応観察映像。",
@@ -506,11 +833,14 @@ result:"フェノールは弱い酸性を示し、アルコールとは異なる
 equation:"C₆H₅OH ⇄ C₆H₅O⁻ + H⁺",
 safety:"フェノールは有害性があるため資料を中心に学ぶ。",
 question:"フェノールの構造に含まれるものは？",
-choices:["ベンゼン環とOH","カルボキシ基のみ","金属原子のみ"],answer:0
+choices:["ベンゼン環とOH","カルボキシ基のみ","金属原子のみ"],
+answer:0
 },
 
 {
-name:"糖類の反応",cat:"有機化学",emoji:"🍬",
+name:"糖類の反応",
+cat:"有機化学",
+emoji:"🍬",
 purpose:"糖類の種類と還元性について学ぶ。",
 principle:"糖類には還元性を示すものと示さないものがある。グルコースは還元性を示す代表的な単糖である。",
 materials:"糖類の反応映像、構造式資料。",
@@ -519,140 +849,184 @@ result:"グルコースやマルトースは還元性を示す。一方、スク
 equation:"グルコースは開鎖構造にアルデヒド基を持つため還元性を示す。",
 safety:"加熱や試薬を用いる反応は教師の管理下で行う。",
 question:"グルコースは還元性を示す？",
-choices:["示す","示さない","必ず消失する"],answer:0
+choices:["示す","示さない","必ず消失する"],
+answer:0
 },
 
 {
-name:"タンパク質の反応",cat:"有機化学",emoji:"🧬",
+name:"タンパク質の反応",
+cat:"有機化学",
+emoji:"🧬",
 purpose:"タンパク質の構造と呈色反応を学ぶ。",
 principle:"タンパク質はアミノ酸がペプチド結合でつながった高分子であり、特定の試薬で呈色反応を示す。",
 materials:"タンパク質の呈色反応の映像、資料。",
 steps:["アミノ酸とペプチド結合を確認する。","タンパク質の構造を学ぶ。","ビウレット反応の特徴を確認する。","キサントプロテイン反応の特徴を確認する。","それぞれの反応の違いを整理する。"],
 result:"ビウレット反応では紫色、キサントプロテイン反応では黄色から橙色系の呈色が見られる。",
-equation:"ペプチド結合：-CO-NH-\nビウレット反応：ペプチド結合に由来する呈色。",
+equation:"ペプチド結合：-CO-NH-",
 safety:"呈色反応に使用する薬品は教師の管理下で扱う。",
 question:"タンパク質に含まれる結合は？",
-choices:["ペプチド結合","エステル結合のみ","金属結合"],answer:0
+choices:["ペプチド結合","エステル結合のみ","金属結合"],
+answer:0
 },
 
 {
-name:"油脂の性質",cat:"有機化学",emoji:"🫒",
+name:"油脂の性質",
+cat:"有機化学",
+emoji:"🫒",
 purpose:"油脂の構造とけん化について学ぶ。",
 principle:"油脂はグリセリンと脂肪酸からできるトリエステルであり、塩基と反応するとセッケンとグリセリンが生じる。",
 materials:"油脂の構造式、反応資料。",
 steps:["油脂の構造を確認する。","グリセリンと脂肪酸の関係を調べる。","エステル結合の位置を確認する。","けん化の仕組みを学ぶ。","生成物を整理する。"],
-result:"油脂を水酸化ナトリウムなどで加水分解すると、グリセリンと脂肪酸のナトリウム塩であるセッケンが生じる。",
+result:"油脂を加水分解すると、グリセリンと脂肪酸の塩であるセッケンが生じる。",
 equation:"油脂 + 3NaOH → グリセリン + 3RCOONa",
 safety:"アルカリ性薬品を用いる実験は教師の管理下で行う。",
 question:"油脂を構成するアルコールは？",
-choices:["グリセリン","エタノール","メタノール"],answer:0
+choices:["グリセリン","エタノール","メタノール"],
+answer:0
 },
 
 {
-name:"ダニエル電池",cat:"電気化学",emoji:"🔋",
+name:"ダニエル電池",
+cat:"電気化学",
+emoji:"🔋",
 purpose:"化学エネルギーを電気エネルギーに変換する仕組みを学ぶ。",
 principle:"亜鉛が電子を放出し、銅イオンが電子を受け取ることで電流が流れる。",
 materials:"ダニエル電池の模式図、電極反応資料、塩橋の模式図。",
 steps:["亜鉛板と銅板の役割を確認する。","それぞれの電極で起こる反応を整理する。","電子が移動する方向を確認する。","塩橋がイオンの移動を助けることを学ぶ。","電池全体の反応式をまとめる。"],
 result:"亜鉛が酸化され、銅イオンが還元される。電子は外部回路を亜鉛側から銅側へ移動する。",
-equation:"負極：Zn → Zn²⁺ + 2e⁻\n正極：Cu²⁺ + 2e⁻ → Cu\n全体：Zn + Cu²⁺ → Zn²⁺ + Cu",
-safety:"実際の電池作成は教師の指導下で行う。溶液や電極の取り扱いに注意する。",
+equation:"負極：Zn → Zn²⁺ + 2e⁻\n正極：Cu²⁺ + 2e⁻ → Cu",
+safety:"実際の電池作成は教師の指導下で行う。",
 question:"ダニエル電池で酸化される金属は？",
-choices:["銅","亜鉛","銀"],answer:1
+choices:["銅","亜鉛","銀"],
+answer:1
 },
 
 {
-name:"電気分解",cat:"電気化学",emoji:"⚡",
+name:"電気分解",
+cat:"電気化学",
+emoji:"⚡",
 purpose:"電気エネルギーによって酸化還元反応が起こる仕組みを学ぶ。",
 principle:"外部電源から電気エネルギーを与えることで、自然には進みにくい酸化還元反応を進める。",
 materials:"電気分解の模式図、電極反応資料。",
 steps:["電気分解の仕組みを確認する。","陽極と陰極の役割を確認する。","陽極では酸化、陰極では還元が起こることを確認する。","電解質の種類によって反応が変わることを学ぶ。","電極反応を整理する。"],
-result:"陽極では酸化、陰極では還元が起こる。生成物は電解質や電極の種類によって異なる。",
-equation:"陽極：酸化\n陰極：還元\n具体的な電極反応は電解質と電極によって異なる。",
-safety:"実際の装置は教師の指導のもとで使用する。電源や電解液を勝手に変更しない。",
+result:"陽極では酸化、陰極では還元が起こる。",
+equation:"陽極：酸化\n陰極：還元",
+safety:"実際の装置は教師の指導のもとで使用する。",
 question:"陰極で起こる反応は？",
-choices:["酸化","還元","中和"],answer:1
+choices:["酸化","還元","中和"],
+answer:1
 },
 
 {
-name:"ヨードホルム反応",cat:"有機化学",emoji:"🧫",
+name:"ヨードホルム反応",
+cat:"有機化学",
+emoji:"🧫",
 purpose:"特定の構造を持つ有機化合物の反応を学ぶ。",
 principle:"メチルケトン構造を持つ化合物などは、ヨウ素と塩基性条件で反応して黄色のヨードホルムを生じる。",
 materials:"反応式資料、ヨードホルム反応の映像。",
 steps:["ヨードホルム反応の原理を確認する。","メチルケトン構造を確認する。","反応を示す代表的な物質を調べる。","生成物の特徴を資料で確認する。","反応する物質の共通点を整理する。"],
 result:"条件に合う化合物から黄色のヨードホルムが生じる。",
-equation:"代表的な構造：CH₃CO-R\n生成物：CHI₃（ヨードホルム）\nCH₃CH(OH)-R型のアルコールも反応対象になる。",
+equation:"生成物：CHI₃（ヨードホルム）",
 safety:"ヨウ素などの試薬を使う実験は教師の管理下で行う。",
 question:"ヨードホルムの色は？",
-choices:["黄色","青色","黒色"],answer:0
+choices:["黄色","青色","黒色"],
+answer:0
 },
 
 {
-name:"ペーパークロマトグラフィー",cat:"理論化学",emoji:"🎨",
+name:"ペーパークロマトグラフィー",
+cat:"理論化学",
+emoji:"🎨",
 purpose:"混合物に含まれる成分を分離する原理を学ぶ。",
 principle:"成分ごとの溶媒への溶けやすさや紙への吸着の違いによって、移動する距離が異なる。",
 materials:"ろ紙、鉛筆、水性マーカー、水、容器。",
 steps:["ろ紙の下部に鉛筆で基準線を引く。","基準線上に試料を少量つける。","試料の位置が溶媒に浸からないように準備する。","ろ紙の端を溶媒に触れさせる。","溶媒が上昇する様子を観察する。","色素が分かれた位置を記録する。"],
-result:"混合されていた色素が、溶媒への溶けやすさや紙への吸着の違いによって異なる位置に分かれる。",
+result:"混合されていた色素が異なる位置に分かれる。",
 equation:"Rf値 = 成分の移動距離 ÷ 溶媒前線の移動距離",
-safety:"水性マーカーと水を使用する。基準線は鉛筆で引き、試料が溶媒に直接浸からないようにする。",
+safety:"水性マーカーと水を使用する。",
 question:"クロマトグラフィーで利用する性質は？",
-choices:["移動の違い","音の違い","磁石への反応"],answer:0
+choices:["移動の違い","音の違い","磁石への反応"],
+answer:0
 },
 
 {
-name:"浸透圧",cat:"理論化学",emoji:"💧",
+name:"浸透圧",
+cat:"理論化学",
+emoji:"💧",
 purpose:"半透膜を通る溶媒の移動について学ぶ。",
 principle:"半透膜を挟んで濃度の異なる溶液があると、溶媒は一般に薄い溶液側から濃い溶液側へ移動する。",
 materials:"浸透圧の模式図、濃度の異なる溶液の資料。",
 steps:["半透膜の働きを確認する。","濃度の異なる溶液を比較する。","溶媒の移動方向を図にする。","浸透圧の意味を整理する。","浸透圧と濃度・温度の関係を学ぶ。"],
 result:"半透膜を通じて溶媒が移動する現象が見られる。",
-equation:"希薄溶液の浸透圧：π = CRT\nC：モル濃度、R：気体定数、T：絶対温度",
+equation:"希薄溶液の浸透圧：π = CRT",
 safety:"教材を用いて仕組みを確認する。",
 question:"半透膜を通って移動する主なものは？",
-choices:["溶媒","溶質","容器"],answer:0
+choices:["溶媒","溶質","容器"],
+answer:0
 },
 
 {
-name:"鉛蓄電池",cat:"電気化学",emoji:"🔋",
+name:"鉛蓄電池",
+cat:"電気化学",
+emoji:"🔋",
 purpose:"鉛蓄電池の放電と充電の仕組みを学ぶ。",
 principle:"放電時には鉛と二酸化鉛が硫酸と反応して硫酸鉛になり、電気エネルギーを取り出す。",
 materials:"鉛蓄電池の模式図、電極反応資料。",
 steps:["鉛蓄電池の構造を確認する。","正極と負極の物質を確認する。","放電時の負極の反応を整理する。","放電時の正極の反応を整理する。","全体反応式を確認する。","充電時には反応が逆向きになることを学ぶ。"],
-result:"放電時には化学エネルギーが電気エネルギーに変わる。充電時には外部から電気エネルギーを与えて反応を逆向きに進める。",
-equation:"負極：Pb + SO₄²⁻ → PbSO₄ + 2e⁻\n正極：PbO₂ + 4H⁺ + SO₄²⁻ + 2e⁻ → PbSO₄ + 2H₂O\n全体：Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O",
+result:"放電時には化学エネルギーが電気エネルギーに変わる。",
+equation:"全体：Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O",
 safety:"電池の分解や電解液の取り扱いは行わず、資料で学習する。",
 question:"鉛蓄電池の電解液は？",
-choices:["希硫酸","食塩水","純水"],answer:0
+choices:["希硫酸","食塩水","純水"],
+answer:0
 }
 
 ];
 
-// イメージ
+
+/* =========================
+   共通設定
+========================= */
+
 const pictures={
-"化学基礎":"🧪",
-"理論化学":"⚗️",
-"無機化学":"🌫️",
-"有機化学":"🧬",
-"電気化学":"🔋"
+ "化学基礎":"🧪",
+ "理論化学":"⚗️",
+ "無機化学":"🌫️",
+ "有機化学":"🧬",
+ "電気化学":"🔋"
 };
 
 let category="すべて";
 let current=null;
 let step=0;
+let simComplete=false;
+
+
+/* =========================
+   HTMLエスケープ
+========================= */
 
 function escapeHTML(value){
+
  return String(value??"").replace(/[&<>"']/g,c=>({
- "&":"&amp;",
- "<":"&lt;",
- ">":"&gt;",
- '"':"&quot;",
- "'":"&#39;"
+
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
+
  })[c]);
+
 }
 
-// 実験一覧
+
+/* =========================
+   実験一覧
+========================= */
+
 function render(){
+
  const q=document.getElementById("search").value.toLowerCase();
 
  const list=experiments
@@ -671,28 +1045,52 @@ function render(){
  "登録実験："+experiments.length+"種類";
 
  document.getElementById("cards").innerHTML=
+
  list.map(e=>`
+
  <div class="card" onclick="openExperiment(${e.index})">
+
   <div class="emoji">${e.emoji}</div>
+
   <div class="tag">${escapeHTML(e.cat)}</div>
+
   <h3>${escapeHTML(e.name)}</h3>
+
   <p>${escapeHTML(e.purpose)}</p>
+
   <strong>詳しく見る →</strong>
+
  </div>
+
  `).join("")||"<p>該当する実験がありません。</p>";
+
 }
 
-// カテゴリー
+
+/* =========================
+   カテゴリー
+========================= */
+
 function setFilter(c,b){
+
  category=c;
+
  document.querySelectorAll(".filters button")
  .forEach(x=>x.classList.remove("active"));
+
  b.classList.add("active");
+
  render();
+
 }
 
-// タブ切り替え
+
+/* =========================
+   タブ切り替え
+========================= */
+
 function showTab(tab,b){
+
  document.getElementById("home").classList.add("hidden");
  document.getElementById("page").classList.add("hidden");
  document.getElementById("records").classList.add("hidden");
@@ -701,16 +1099,27 @@ function showTab(tab,b){
 
  document.querySelectorAll(".tabs button")
  .forEach(x=>x.classList.remove("active"));
+
  b.classList.add("active");
 
  if(tab==="records")renderRecords();
+
  window.scrollTo(0,0);
+
 }
 
-// 実験を開く
+
+/* =========================
+   実験を開く
+========================= */
+
 function openExperiment(index){
+
  current=experiments[index];
+
  step=0;
+
+ simComplete=false;
 
  document.getElementById("home").classList.add("hidden");
  document.getElementById("records").classList.add("hidden");
@@ -720,18 +1129,27 @@ function openExperiment(index){
  .forEach(x=>x.classList.remove("active"));
 
  document.getElementById("category").textContent=current.cat;
- document.getElementById("title").textContent=current.emoji+" "+current.name;
+
+ document.getElementById("title").textContent=
+ current.emoji+" "+current.name;
+
  document.getElementById("purpose").textContent=current.purpose;
+
  document.getElementById("principle").textContent=current.principle;
+
  document.getElementById("materials").textContent=current.materials;
+
  document.getElementById("result").textContent=current.result;
+
  document.getElementById("equation").textContent=current.equation;
+
  document.getElementById("safety").textContent=current.safety;
 
  document.getElementById("picture").textContent=
  pictures[current.cat]+" "+current.emoji;
 
  document.getElementById("pictureTitle").textContent=current.name;
+
  document.getElementById("pictureDescription").textContent=
  current.cat+" の学習イメージ";
 
@@ -739,28 +1157,227 @@ function openExperiment(index){
  document.getElementById("thoughtInput").value="";
  document.getElementById("saveMessage").textContent="";
 
- // ★確認問題の問題文と選択肢を表示
  document.getElementById("quiz").innerHTML=`
-  <div class="info">
-   <strong>問題</strong>
-   <p>${escapeHTML(current.question)}</p>
-  </div>
-  <div>
-   ${current.choices.map((c,i)=>
-    `<button onclick="checkAnswer(${i})">
-     ${i+1}. ${escapeHTML(c)}
-    </button>`
-   ).join("")}
-  </div>
+
+ <div class="info">
+
+  <strong>問題</strong>
+
+  <p>${escapeHTML(current.question)}</p>
+
+ </div>
+
+ <div>
+
+  ${current.choices.map((c,i)=>
+
+   `<button onclick="checkAnswer(${i})">
+    ${i+1}. ${escapeHTML(c)}
+   </button>`
+
+  ).join("")}
+
+ </div>
+
  `;
 
  document.getElementById("feedback").textContent="";
+
  showStep();
+
  window.scrollTo(0,0);
+
 }
 
-// 手順表示
+
+/* =========================
+   シミュレーションゲーム
+========================= */
+
+const simProfiles={
+
+ "酸・塩基の性質":[
+  "指示薬の色を観察しよう",
+  "#e8a0bd",
+  "酸性・中性・塩基性によって指示薬の色が変化するよ。"
+ ],
+
+ "中和反応":[
+  "中和反応を確認しよう",
+  "#b7a5d8",
+  "H⁺とOH⁻が反応して水になることを確認しよう。"
+ ],
+
+ "中和滴定":[
+  "中和点を見つけよう",
+  "#df9db5",
+  "指示薬の変化を手がかりに中和点を考えよう。"
+ ],
+
+ "溶解度と再結晶":[
+  "結晶のでき方を観察しよう",
+  "#a9dce8",
+  "温度が下がると溶解度が小さくなり、結晶が現れる場合があるよ。"
+ ],
+
+ "二酸化炭素の性質":[
+  "石灰水の変化を予想しよう",
+  "#e5e9ed",
+  "二酸化炭素と石灰水の反応を考えよう。"
+ ],
+
+ "タンパク質の反応":[
+  "呈色反応を観察しよう",
+  "#9b79bd",
+  "タンパク質の呈色反応を考えよう。"
+ ],
+
+ "ダニエル電池":[
+  "電子の移動を確認しよう",
+  "#9bd3c4",
+  "電極間の電子の移動を考えよう。"
+ ],
+
+ "電気分解":[
+  "電極反応を整理しよう",
+  "#9bd3c4",
+  "陽極と陰極で起こる反応を考えよう。"
+ ],
+
+ "ペーパークロマトグラフィー":[
+  "色素の分離を観察しよう",
+  "#b9a5d9",
+  "成分ごとの移動しやすさの違いを考えよう。"
+ ],
+
+ "硫酸イオンの確認":[
+  "沈殿反応を観察しよう",
+  "#edf0f2",
+  "イオンの組み合わせによる沈殿を考えよう。"
+ ],
+
+ "銀鏡反応":[
+  "酸化還元を確認しよう",
+  "#c9d5dc",
+  "アルデヒドと銀イオンの酸化還元を考えよう。"
+ ],
+
+ "ヨードホルム反応":[
+  "生成物の色を予想しよう",
+  "#f0d66e",
+  "生成物の特徴を考えよう。"
+ ],
+
+ "鉛蓄電池":[
+  "放電時の反応を確認しよう",
+  "#9bd3c4",
+  "放電時に両極で起こる反応を整理しよう。"
+ ]
+
+};
+
+
+/* ゲーム表示 */
+
+function renderSimulation(){
+
+ const panel=document.getElementById("simulation");
+
+ if(!current||!panel)return;
+
+ const missionStep=Math.floor(current.steps.length/2);
+
+ panel.classList.toggle("active",step===missionStep);
+
+ if(step!==missionStep)return;
+
+ const p=simProfiles[current.name]||[
+  current.name+" の変化を考えよう",
+  "#9bd5df",
+  "実験の原理をもとに正しい結果を予想しよう。"
+ ];
+
+ document.getElementById("simTitle").textContent=
+ simComplete?"ミッション達成！":p[0];
+
+ document.getElementById("simDescription").textContent=
+ simComplete?current.result:p[2];
+
+ document.getElementById("simVessel").style.setProperty(
+  "--liquid",
+  simComplete?p[1]:"#dcecf0"
+ );
+
+ document.getElementById("simQuestion").textContent=
+ current.question;
+
+ const options=document.getElementById("simOptions");
+
+ const feedback=document.getElementById("simFeedback");
+
+ if(simComplete){
+
+  options.innerHTML="";
+
+  feedback.className="sim-feedback good";
+
+  feedback.innerHTML=
+   "<strong>🏆 正解！</strong>"+
+   "<p><b>観察結果：</b>"+
+   escapeHTML(current.result)+"</p>"+
+   "<p><b>関連知識：</b>"+
+   escapeHTML(current.equation)+"</p>";
+
+  return;
+
+ }
+
+ feedback.className="";
+ feedback.textContent="";
+
+ options.innerHTML=current.choices.map((c,i)=>
+
+  '<button type="button" onclick="answerSimulation('+i+')">'+
+  (i+1)+". "+escapeHTML(c)+
+  "</button>"
+
+ ).join("");
+
+}
+
+
+/* ゲームの正誤判定 */
+
+function answerSimulation(i){
+
+ if(!current||simComplete)return;
+
+ const feedback=document.getElementById("simFeedback");
+
+ if(i===current.answer){
+
+  simComplete=true;
+
+  renderSimulation();
+
+ }else{
+
+  feedback.className="sim-feedback try";
+
+  feedback.textContent=
+   "もう一度考えてみよう！実験の原理を読み返してね。";
+
+ }
+
+}
+
+
+/* =========================
+   手順表示
+========================= */
+
 function showStep(){
+
  document.getElementById("step").textContent=
  "STEP "+(step+1)+"　"+current.steps[step];
 
@@ -769,136 +1386,269 @@ function showStep(){
 
  document.getElementById("bar").style.width=
  ((step+1)/current.steps.length*100)+"%";
+
+ renderSimulation();
+
 }
 
-// 前へ・次へ
+
+/* =========================
+   前へ・次へ
+========================= */
+
 function move(n){
+
  if(!current)return;
- step=Math.max(0,Math.min(current.steps.length-1,step+n));
+
+ const missionStep=Math.floor(current.steps.length/2);
+
+ if(n>0 && step===missionStep && !simComplete){
+
+  const f=document.getElementById("simFeedback");
+
+  f.className="sim-feedback try";
+
+  f.textContent="🎮 先にミッションに正解しよう！";
+
+  return;
+
+ }
+
+ step=Math.max(
+  0,
+  Math.min(current.steps.length-1,step+n)
+ );
+
  showStep();
+
 }
 
-// 正解判定
+
+/* =========================
+   確認問題
+========================= */
+
 function checkAnswer(i){
+
  const f=document.getElementById("feedback");
 
  if(i===current.answer){
+
   f.textContent="⭕ 正解！よくできました！";
+
   f.style.color="#16834b";
+
  }else{
+
   f.textContent="❌ 不正解！もう一度考えてみよう！";
+
   f.style.color="#c45c45";
+
  }
+
 }
 
-// 記録の取得
+
+/* =========================
+   記録の取得
+========================= */
+
 function getRecords(){
+
  try{
-  const data=JSON.parse(localStorage.getItem("labRecords")||"[]");
+
+  const data=JSON.parse(
+   localStorage.getItem("labRecords")||"[]"
+  );
+
   return Array.isArray(data)?data:[];
+
  }catch(e){
+
   return [];
+
  }
+
 }
 
-// 記録の保存
+
+/* =========================
+   記録の保存
+========================= */
+
 function saveRecord(){
+
  if(!current)return;
 
  const result=document.getElementById("resultInput").value.trim();
+
  const thought=document.getElementById("thoughtInput").value.trim();
 
  if(!result&&!thought){
+
   document.getElementById("saveMessage").textContent=
   "結果または考察を入力してください。";
+
   return;
+
  }
 
  let records=getRecords();
+
  const existing=records.findIndex(r=>r.name===current.name);
 
  const record={
+
   name:current.name,
+
   cat:current.cat,
+
   result:result,
+
   thought:thought,
+
   date:new Date().toLocaleString("ja-JP")
+
  };
 
  if(existing>=0){
+
   records[existing]=record;
+
  }else{
+
   records.unshift(record);
+
  }
 
  try{
+
   localStorage.setItem("labRecords",JSON.stringify(records));
+
   document.getElementById("saveMessage").textContent=
   "✅ 実験記録を保存しました！";
+
  }catch(e){
+
   document.getElementById("saveMessage").textContent=
   "保存できませんでした。ブラウザの保存容量を確認してください。";
+
  }
+
 }
 
-// 記録一覧
+
+/* =========================
+   記録一覧
+========================= */
+
 function renderRecords(){
+
  const records=getRecords();
+
  const box=document.getElementById("recordList");
 
  if(records.length===0){
+
   box.innerHTML="<p>まだ実験記録はありません。</p>";
+
   return;
+
  }
 
  box.innerHTML=records.map((r,i)=>`
+
  <div class="record">
+
   <div class="tag">${escapeHTML(r.cat)}</div>
+
   <h3>${escapeHTML(r.name)}</h3>
+
   <p class="small">${escapeHTML(r.date)}</p>
+
   <strong>実験結果</strong>
+
   <p>${escapeHTML(r.result)||"未入力"}</p>
+
   <strong>考察・感想</strong>
+
   <p>${escapeHTML(r.thought)||"未入力"}</p>
-  <button class="primary" onclick="editRecord(${i})">編集</button>
-  <button class="danger" onclick="deleteRecord(${i})">削除</button>
+
+  <button class="primary" onclick="editRecord(${i})">
+   編集
+  </button>
+
+  <button class="danger" onclick="deleteRecord(${i})">
+   削除
+  </button>
+
  </div>
+
  `).join("");
+
 }
 
-// 記録編集
+
+/* =========================
+   記録編集
+========================= */
+
 function editRecord(i){
+
  const records=getRecords();
+
  const r=records[i];
+
  if(!r)return;
 
  const index=experiments.findIndex(e=>e.name===r.name);
+
  if(index<0)return;
 
  openExperiment(index);
 
  document.getElementById("resultInput").value=r.result||"";
+
  document.getElementById("thoughtInput").value=r.thought||"";
+
 }
 
-// 記録削除
+
+/* =========================
+   記録削除
+========================= */
+
 function deleteRecord(i){
+
  if(!confirm("この記録を削除しますか？"))return;
 
  const records=getRecords();
+
  records.splice(i,1);
 
  try{
+
   localStorage.setItem("labRecords",JSON.stringify(records));
+
   renderRecords();
+
  }catch(e){
+
   alert("削除できませんでした。");
+
  }
+
 }
 
-// 一覧に戻る
+
+/* =========================
+   一覧に戻る
+========================= */
+
 function goHome(){
+
  document.getElementById("page").classList.add("hidden");
+
  document.getElementById("home").classList.remove("hidden");
 
  document.querySelectorAll(".tabs button")
@@ -907,14 +1657,24 @@ function goHome(){
  document.querySelectorAll(".tabs button")[0].classList.add("active");
 
  window.scrollTo(0,0);
+
 }
 
-// 検索
+
+/* =========================
+   検索
+========================= */
+
 document.getElementById("search").addEventListener("input",render);
 
-// 最初の表示
+
+/* =========================
+   最初の表示
+========================= */
+
 render();
 
 </script>
+
 </body>
 </html>
